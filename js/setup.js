@@ -7,10 +7,12 @@ function genereteNumber(min, max) {
 }
 
 function genereteWizardName () {
-  var WIZARD_NAMES = ['Иван', 'Хуан Себастьян', 'Мария', 'Кристоф', 'Виктор', 'Юлия', 'Люпита', 'Вашингтон'],
-      WIZARD_SURNAMES = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг'];
+  var WIZARD_NAMES = ['Иван', 'Хуан Себастьян', 'Мария', 'Кристоф', 
+                      'Виктор', 'Юлия', 'Люпита', 'Вашингтон'],
+      WIZARD_SURNAMES = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 
+                         'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг'];
   return (Math.random() <= 0.5) ? WIZARD_NAMES[genereteNumber(0, WIZARD_NAMES.length-1)] + ' ' + WIZARD_SURNAMES[genereteNumber(0, WIZARD_SURNAMES.length-1)] :
-                                 WIZARD_SURNAMES[genereteNumber(0, WIZARD_SURNAMES.length-1)] + ' ' + WIZARD_NAMES[genereteNumber(0, WIZARD_NAMES.length-1)];
+                                  WIZARD_SURNAMES[genereteNumber(0, WIZARD_SURNAMES.length-1)] + ' ' + WIZARD_NAMES[genereteNumber(0, WIZARD_NAMES.length-1)];
 }
 
 function genereteCoatColor () {
@@ -35,7 +37,7 @@ function genereteWizardTemplate (wizard) {
 
 function genereteWizardsObject () {
   var wizardsObject = [];
-  for (var i=0; i<4; i++) {
+  for (var i = 0; i < 4; i++) {
     wizardsObject[i] = {
       name: genereteWizardName(),
       coatColor: genereteCoatColor(), 
@@ -57,7 +59,7 @@ function genereteWizardElement () {
 var setupElement = document.querySelector('.setup');
 
 function createWizards () {
-  var similarListElement=setupElement.querySelector('.setup-similar-list');
+  var similarListElement = setupElement.querySelector('.setup-similar-list');
   similarListElement.appendChild(genereteWizardElement());
 }
 
